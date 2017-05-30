@@ -2,18 +2,26 @@ package java24.board.model;
 
 import java.util.Date;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class ModelBoard {
     
-    private String  boardcd    = "";      //` VARCHAR(20) NOT NULL,
-    private String  boardnm    = "";      //` VARCHAR(40) NOT NULL,
-    private Boolean UseYN      = null;    //` TINYINT(1) NOT NULL DEFAULT '1',
-    private String  InsertUID  = "";      //` VARCHAR(40) NULL DEFAULT NULL,
-    private Date    InsertDT   = null;    //` DATETIME NULL DEFAULT NULL,
-    private String  UpdateUID  = "";      //` VARCHAR(40) NULL DEFAULT NULL,
-    private Date    UpdateDT   = null;    //` DATETIME NULL DEFAULT NULL,
+    private String  boardcd   = "";    // `boardcd` VARCHAR(20) NOT NULL,
+    private String  boardnm   = "";    // `boardnm` VARCHAR(40) NOT NULL,
+    private Boolean UseYN     = null;  // `UseYN` TINYINT(1) NOT NULL DEFAULT '1',
+    private String  InsertUID = "";    // `InsertUID` VARCHAR(40) NULL DEFAULT NULL,
+    private Date    InsertDT  = null;  // `InsertDT` DATETIME NULL DEFAULT NULL,
+    private String  UpdateUID = "";    // `UpdateUID` VARCHAR(40) NULL DEFAULT NULL,
+    private Date    UpdateDT  = null;  // `UpdateDT` DATETIME NULL DEFAULT NULL,
+    
+    public ModelBoard() {
+        super();
+    }
+    @Override
+    public String toString() {
+        return "ModelBoard [boardcd=" + boardcd + ", boardnm=" + boardnm
+                + ", UseYN=" + UseYN + ", InsertUID=" + InsertUID
+                + ", InsertDT=" + InsertDT + ", UpdateUID=" + UpdateUID
+                + ", UpdateDT=" + UpdateDT + "]";
+    }
     public String getBoardcd() {
         return boardcd;
     }
@@ -55,16 +63,6 @@ public class ModelBoard {
     }
     public void setUpdateDT(Date updateDT) {
         UpdateDT = updateDT;
-    }
-    @Override
-    public String toString() {
-        return "ModelBoard [boardcd=" + boardcd + ", boardnm=" + boardnm
-                + ", UseYN=" + UseYN + ", InsertUID=" + InsertUID
-                + ", InsertDT=" + InsertDT + ", UpdateUID=" + UpdateUID
-                + ", UpdateDT=" + UpdateDT + "]";
-    }
-    public ModelBoard() {
-        super();
     }
     
     

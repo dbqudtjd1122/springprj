@@ -2,23 +2,32 @@ package java24.board.model;
 
 import java.util.Date;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class ModelUser {
-     
     
-    private Integer userno     = null;      //` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-    private String  userid     = "";        //` VARCHAR(50) NOT NULL,
-    private String  email      = "";        //` VARCHAR(100) NOT NULL,
-    private String  passwd     = "";        //` VARCHAR(30) NULL DEFAULT NULL,
-    private String  name       = "";        //` VARCHAR(30) NULL DEFAULT NULL,
-    private String  mobile     = "";        //` VARCHAR(20) NULL DEFAULT NULL,
-    private Boolean retireYN   = null;      //` TINYINT(1) NULL DEFAULT '1',
-    private String  InsertUID  = "";        //` VARCHAR(40) NULL DEFAULT NULL,
-    private Date    InsertDT   = null;      //` DATETIME NULL DEFAULT NULL,
-    private String  UpdateUID  = "";        //` VARCHAR(40) NULL DEFAULT NULL,
-    private Date    UpdateDT   = null;      //` DATETIME NULL DEFAULT NULL,
+    private Integer userno    = null;   // `userno` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    private String  userid    = "";     // `userid` VARCHAR(50) NOT NULL,
+    private String  email     = "";     // `email` VARCHAR(100) NOT NULL,
+    private String  passwd    = "";     // `passwd` VARCHAR(30) NULL DEFAULT NULL,
+    private String  name      = "";     // `name` VARCHAR(30) NULL DEFAULT NULL,
+    private String  mobile    = "";     // `mobile` VARCHAR(20) NULL DEFAULT NULL,
+    private Boolean retireYN  = null;   // `retireYN` TINYINT(1) NULL DEFAULT '1',
+    private String  InsertUID = "";     // `InsertUID` VARCHAR(40) NULL DEFAULT NULL,
+    private Date    InsertDT  = null;   // `InsertDT` DATETIME NULL DEFAULT NULL,
+    private String  UpdateUID = "";     // `UpdateUID` VARCHAR(40) NULL DEFAULT NULL,
+    private Date    UpdateDT  = null;   // `UpdateDT` DATETIME NULL DEFAULT NULL,
+    
+    
+    public ModelUser() {
+        super();
+    }
+    @Override
+    public String toString() {
+        return "ModelUser [userno=" + userno + ", userid=" + userid + ", email="
+                + email + ", passwd=" + passwd + ", name=" + name + ", mobile="
+                + mobile + ", retireYN=" + retireYN + ", InsertUID=" + InsertUID
+                + ", InsertDT=" + InsertDT + ", UpdateUID=" + UpdateUID
+                + ", UpdateDT=" + UpdateDT + "]";
+    }
     public Integer getUserno() {
         return userno;
     }
@@ -84,17 +93,6 @@ public class ModelUser {
     }
     public void setUpdateDT(Date updateDT) {
         UpdateDT = updateDT;
-    }
-    @Override
-    public String toString() {
-        return "ModelUser [userno=" + userno + ", userid=" + userid + ", email="
-                + email + ", passwd=" + passwd + ", name=" + name + ", mobile="
-                + mobile + ", retireYN=" + retireYN + ", InsertUID=" + InsertUID
-                + ", InsertDT=" + InsertDT + ", UpdateUID=" + UpdateUID
-                + ", UpdateDT=" + UpdateDT + "]";
-    }
-    public ModelUser() {
-        super();
     }
     
     

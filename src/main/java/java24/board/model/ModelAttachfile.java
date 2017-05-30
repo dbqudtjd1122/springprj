@@ -3,22 +3,35 @@ package java24.board.model;
 import java.util.Arrays;
 import java.util.Date;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class ModelAttachfile {
     
-    private Integer attachfileno = null;   // ` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-    private String  filename     = "";     // ` VARCHAR(50) NOT NULL,
-    private String  filetype     = "";     // ` VARCHAR(30) NULL DEFAULT NULL,
-    private Integer filesize     = null;   // ` INT(11) NULL DEFAULT NULL,
-    private Integer articleno    = null;   // ` INT(11) NULL DEFAULT NULL,
-    private Boolean UseYN        = null;   // ` TINYINT(1) NULL DEFAULT '1',
-    private String  InsertUID    = "";     // ` VARCHAR(40) NULL DEFAULT NULL,
-    private Date    InsertDT     = null;   // ` DATETIME NULL DEFAULT NULL,
-    private String  UpdateUID    = "";     // ` VARCHAR(40) NULL DEFAULT NULL,
-    private Date    UpdateDT     = null;   // ` DATETIME NULL DEFAULT NULL,
-    private byte[]  imageData    = null;   // ` LONGBLOB NULL,
+    private Integer attachfileno = null; // `attachfileno` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    private String  filename     = "";        // `filename` VARCHAR(50) NOT NULL,
+    private String  filetype     = "";        // `filetype` VARCHAR(30) NULL DEFAULT NULL,
+    private Integer filesize     = null;     // `filesize` INT(11) NULL DEFAULT NULL,
+    private Integer articleno    = null;    // `articleno` INT(11) NULL DEFAULT NULL,
+    private Boolean UseYN        = null;        // `UseYN` TINYINT(1) NULL DEFAULT '1',
+    private String  InsertUID    = ""   ;    // `InsertUID` VARCHAR(40) NULL DEFAULT NULL,
+    private Date    InsertDT     = null;        // `InsertDT` DATETIME NULL DEFAULT NULL,
+    private String  UpdateUID    = "";       // `UpdateUID` VARCHAR(40) NULL DEFAULT NULL,
+    private Date    UpdateDT     = null;        // `UpdateDT` DATETIME NULL DEFAULT NULL,
+    private byte [] imageData    = null;    // `imageData` LONGBLOB NULL,
+    
+    
+    public ModelAttachfile() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        return "ModelAttachfile [attachfileno=" + attachfileno + ", filename="
+                + filename + ", filetype=" + filetype + ", filesize=" + filesize
+                + ", articleno=" + articleno + ", UseYN=" + UseYN
+                + ", InsertUID=" + InsertUID + ", InsertDT=" + InsertDT
+                + ", UpdateUID=" + UpdateUID + ", UpdateDT=" + UpdateDT
+                + ", imageData=" + Arrays.toString(imageData) + "]";
+    }
+    
     public Integer getAttachfileno() {
         return attachfileno;
     }
@@ -85,18 +98,6 @@ public class ModelAttachfile {
     public void setImageData(byte[] imageData) {
         this.imageData = imageData;
     }
-    @Override
-    public String toString() {
-        return "ModelAttachfile [attachfileno=" + attachfileno + ", filename="
-                + filename + ", filetype=" + filetype + ", filesize=" + filesize
-                + ", articleno=" + articleno + ", UseYN=" + UseYN
-                + ", InsertUID=" + InsertUID + ", InsertDT=" + InsertDT
-                + ", UpdateUID=" + UpdateUID + ", UpdateDT=" + UpdateDT
-                + ", imageData=" + Arrays.toString(imageData) + "]";
-    }
-    public ModelAttachfile() {
-        super();
-    }
     
-    
+   
 }

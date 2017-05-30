@@ -169,7 +169,7 @@
     <select id="getArticle" parameterType="int" resultType="ModelArticle">
         SELECT articleno, boardcd, title, content, email, hit, regdate
         FROM TB_BBS_Article
-        WHERE articleno = #{articleno}
+        WHERE articleno = #{articleNo}
     </select>
     
     <insert id="insertArticle" parameterType="ModelArticle">
@@ -207,7 +207,7 @@
         DELETE FROM TB_BBS_Article 
          WHERE 1 = 1 
           <if test="articleno != null and articleno != ''" >
-          AND articleno = #{articleno}
+          AND articleno = #{articleNo}
           </if>
           <if test="boardcd != null and boardcd != ''">
           AND boardcd  = #{boardcd}
@@ -223,7 +223,7 @@
     <update id="increaseHit" parameterType="int">
         UPDATE TB_BBS_Article 
            SET hit=hit+1 
-         WHERE articleno=#{articleno}
+         WHERE articleno=#{articleNo}
     </update>
     
     <select id="getNextArticle" parameterType="hashmap" resultType="ModelArticle">
@@ -235,7 +235,7 @@
                 (SELECT articleno, title 
                    FROM TB_BBS_Article 
                   WHERE boardcd = #{boardcd} 
-                    AND articleno = #{articleno}
+                    AND articleno = #{articleNo}
                     <if test="searchWord != null">
                         AND (title LIKE '%${searchWord}%' OR
                         content LIKE '%${searchWord}%')
@@ -256,7 +256,7 @@
             (SELECT articleno, title 
                FROM TB_BBS_Article 
               WHERE boardcd = #{boardcd} 
-                AND articleno = #{articleno}
+                AND articleno = #{articleNo}
                 <if test="searchWord != null">
                     AND (title LIKE '%${searchWord}%' OR
                     content LIKE '%${searchWord}%')
@@ -281,7 +281,7 @@
     <select id="getAttachFileList" parameterType="int" resultType="ModelAttachFile">
         SELECT attachfileno, filename, filetype, filesize,articleno 
           FROM TB_BBS_Attachfile 
-         WHERE articleno = #{articleno} 
+         WHERE articleno = #{articleNo} 
         ORDER BY attachfileno
     </select>
     
@@ -315,7 +315,7 @@
     <select id="getCommentList" parameterType="int" resultType="ModelComments">
         SELECT commentno, articleno, email, memo, regdate
         FROM TB_BBS_Comments
-        WHERE articleno = #{articleno}
+        WHERE articleno = #{articleNo}
         ORDER BY commentno DESC
     </select>
     

@@ -2,31 +2,39 @@ package java24.board.model;
 
 import java.util.Date;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class ModelArticle {
     
-    
-    private Integer articleno  = null;  // ` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-    private String  boardcd    = "";    // ` VARCHAR(20) NULL DEFAULT NULL,
-    private String  title      = "";    // ` VARCHAR(200) NOT NULL,
-    private String  content    = "";    // ` MEDIUMTEXT NULL,
-    private String  email      = "";    // ` VARCHAR(60) NULL DEFAULT NULL,
-    private Integer hit        = null;  // ` INT(10) UNSIGNED NULL DEFAULT '0',
-    private Date    regdate    = null;  // ` DATETIME NULL DEFAULT NULL,
-    private Boolean UseYN      = null;  // ` TINYINT(1) NOT NULL DEFAULT '1',
-    private String  InsertUID  = "";    // ` VARCHAR(40) NULL DEFAULT NULL,
-    private Date    InsertDT   = null;  // ` DATETIME NULL DEFAULT NULL,
-    private String  UpdateUID  = "";    // ` VARCHAR(40) NULL DEFAULT NULL,
-    private Date    UpdateDT   = null;  // ` DATETIME NULL DEFAULT NULL,
-    
-    
-    public Integer getArticleno() {
-        return articleno;
+      private Integer articlen  = null;  // `articleno` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+      private String  boardcd   =   "";  // `boardcd` VARCHAR(20) NULL DEFAULT NULL,
+      private String  title     =   "";  // `title` VARCHAR(200) NOT NULL,
+      private String  content   =   "";  // `content` MEDIUMTEXT NULL,
+      private String  email     =   "";  // `email` VARCHAR(60) NULL DEFAULT NULL,
+      private Integer hit       = null;  // `hit` INT(10) UNSIGNED NULL DEFAULT '0',
+      private Date    regdate   = null;  // `regdate` DATETIME NULL DEFAULT NULL,
+      private Boolean UseYN     = null;  // `UseYN` TINYINT(1) NOT NULL DEFAULT '1',
+      private String  InsertUID =   "";  // `InsertUID` VARCHAR(40) NULL DEFAULT NULL,
+      private Date    InsertDT  = null;  // `InsertDT` DATETIME NULL DEFAULT NULL,
+      private String  UpdateUID =   "";  // `UpdateUID` VARCHAR(40) NULL DEFAULT NULL,
+      private Date    UpdateDT  = null;  // `UpdateDT` DATETIME NULL DEFAULT NULL,
+      
+      
+    public ModelArticle() {
+        super();
     }
-    public void setArticleno(Integer articleno) {
-        this.articleno = articleno;
+    
+    @Override
+    public String toString() {
+        return "ModelArticle [articlen=" + articlen + ", boardcd=" + boardcd
+                + ", title=" + title + ", content=" + content + ", email="
+                + email + ", hit=" + hit + ", regdate=" + regdate + ", UseYN="
+                + UseYN + ", InsertUID=" + InsertUID + ", InsertDT=" + InsertDT
+                + ", UpdateUID=" + UpdateUID + ", UpdateDT=" + UpdateDT + "]";
+    }
+    public Integer getArticlen() {
+        return articlen;
+    }
+    public void setArticlen(Integer articlen) {
+        this.articlen = articlen;
     }
     public String getBoardcd() {
         return boardcd;
@@ -94,17 +102,6 @@ public class ModelArticle {
     public void setUpdateDT(Date updateDT) {
         UpdateDT = updateDT;
     }
-    @Override
-    public String toString() {
-        return "ModelArticle [articleno=" + articleno + ", boardcd=" + boardcd
-                + ", title=" + title + ", content=" + content + ", email="
-                + email + ", hit=" + hit + ", regdate=" + regdate + ", UseYN="
-                + UseYN + ", InsertUID=" + InsertUID + ", InsertDT=" + InsertDT
-                + ", UpdateUID=" + UpdateUID + ", UpdateDT=" + UpdateDT + "]";
-    }
-    public ModelArticle() {
-        super();
-    }
     
-    
+      
 }

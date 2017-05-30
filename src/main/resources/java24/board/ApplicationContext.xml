@@ -48,6 +48,7 @@
         <beans:property name="driverClassName"   value="com.mysql.jdbc.Driver" />
         <beans:property name="url"               value="jdbc:mysql://localhost:5600/springboard?useUnicode=true&amp;characterEncoding=utf8" />
         <beans:property name="username"          value="tester1" />
+        
         <beans:property name="password"          value="1234" />
              
         <beans:property name="defaultAutoCommit"          value="true"/> 
@@ -69,13 +70,11 @@
         <beans:constructor-arg index="0" ref="sqlSessionFactory" />
     </beans:bean>   
     
-    
-    
     <!-- step4. 트랜잭션 설정 :  commit, rollback -->
     <beans:bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <beans:property name="dataSource" ref="dataSource" />
     </beans:bean>
-
+    
     <!-- 실질적으로 트랜잭션 advice가 어디서 필요한지 알려줌 -->
     <aop:config proxy-target-class="true">
         <!-- 패키지 mybatis. 이하의 모든 메서드에 pointcut을 걸음. -->
@@ -84,22 +83,22 @@
         <aop:advisor pointcut-ref="controllerTx"  advice-ref="txAdvice"  />
     </aop:config>
     
-    <!-- Transaction 대상 설정 -->
+     <!-- Transaction 대상 설정 -->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
-            <tx:method name="insert*"       rollback-for="RuntimeException" />
+            <tx:method name="Insert*"       rollback-for="RuntimeException" />
             <tx:method name="write*"        rollback-for="RuntimeException" />
             <tx:method name="add*"          rollback-for="RuntimeException" />
             <tx:method name="create*"       rollback-for="RuntimeException" />
             <tx:method name="regist*"       rollback-for="RuntimeException" />
             <tx:method name="set*"          rollback-for="RuntimeException" />
 
-            <tx:method name="update*"       rollback-for="RuntimeException" />
+            <tx:method name="Update*"       rollback-for="RuntimeException" />
             <tx:method name="modify*"       rollback-for="RuntimeException" />
             <tx:method name="edit*"         rollback-for="RuntimeException" />
             <tx:method name="change*"       rollback-for="RuntimeException" />
 
-            <tx:method name="delete*"       rollback-for="RuntimeException" />
+            <tx:method name="Delete*"       rollback-for="RuntimeException" />
             <tx:method name="remove*"       rollback-for="RuntimeException" />
             <tx:method name="terminate*"    rollback-for="RuntimeException" />
 
@@ -108,5 +107,4 @@
             <tx:method name="get*"          read-only="true" />
         </tx:attributes>
     </tx:advice>
-    
 </beans:beans>

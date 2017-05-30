@@ -2,22 +2,31 @@ package java24.board.model;
 
 import java.util.Date;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class ModelComments {
     
+    private Integer commentno = null;   // `commentno` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    private Integer articleno = null;   // `articleno` INT(10) UNSIGNED NOT NULL,
+    private String  email     = "";     // `email` VARCHAR(60) NULL DEFAULT NULL,
+    private String  memo      = "";     // `memo` VARCHAR(4000) NULL DEFAULT NULL,
+    private Date    regdate   = null;   // `regdate` DATETIME NULL DEFAULT NULL,
+    private Boolean UseYN     = null;   // `UseYN` TINYINT(1) NULL DEFAULT '1',
+    private String  InsertUID = "";     // `InsertUID` VARCHAR(40) NULL DEFAULT NULL,
+    private Date    InsertDT  = null;   // `InsertDT` DATETIME NULL DEFAULT NULL,
+    private String  UpdateUID = "";     // `UpdateUID` VARCHAR(40) NULL DEFAULT NULL,
+    private Date    UpdateDT  = null;   // `UpdateDT` DATETIME NULL DEFAULT NULL,
     
-    private Integer commentno   = null;   //` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-    private Integer articleno   = null;   //` INT(10) UNSIGNED NOT NULL,
-    private String  email       = "";     //` VARCHAR(60) NULL DEFAULT NULL,
-    private String  memo        = "";     //` VARCHAR(4000) NULL DEFAULT NULL,
-    private Date    regdate     = null;   //` DATETIME NULL DEFAULT NULL,
-    private Boolean UseYN       = null;   //` TINYINT(1) NULL DEFAULT '1',
-    private String  InsertUID   = "";     //` VARCHAR(40) NULL DEFAULT NULL,
-    private Date    InsertDT    = null;   //` DATETIME NULL DEFAULT NULL,
-    private String  UpdateUID   = "";     //` VARCHAR(40) NULL DEFAULT NULL,
-    private Date    UpdateDT    = null;   //` DATETIME NULL DEFAULT NULL,
+    
+    public ModelComments() {
+        super();
+    }
+    @Override
+    public String toString() {
+        return "ModelComments [commentno=" + commentno + ", articleno="
+                + articleno + ", email=" + email + ", memo=" + memo
+                + ", regdate=" + regdate + ", UseYN=" + UseYN + ", InsertUID="
+                + InsertUID + ", InsertDT=" + InsertDT + ", UpdateUID="
+                + UpdateUID + ", UpdateDT=" + UpdateDT + "]";
+    }
     public Integer getCommentno() {
         return commentno;
     }
@@ -78,17 +87,7 @@ public class ModelComments {
     public void setUpdateDT(Date updateDT) {
         UpdateDT = updateDT;
     }
-    @Override
-    public String toString() {
-        return "ModelComments [commentno=" + commentno + ", articleno="
-                + articleno + ", email=" + email + ", memo=" + memo
-                + ", regdate=" + regdate + ", UseYN=" + UseYN + ", InsertUID="
-                + InsertUID + ", InsertDT=" + InsertDT + ", UpdateUID="
-                + UpdateUID + ", UpdateDT=" + UpdateDT + "]";
-    }
-    public ModelComments() {
-        super();
-    }
+    
     
     
 }
