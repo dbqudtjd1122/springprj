@@ -29,3 +29,14 @@ src/main/resources/*
 !src/test/java/
 src/test/java/*
 !src/test/java/java24/
+/gradle
+/.classpath
+/.project
+/gradlew
+/gradlew.bat
+/local.properties
+/settings.gradle
+/gradlew
+/gradlew.bat
+/local.properties
+/settings.gradle
