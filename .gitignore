@@ -29,6 +29,8 @@ src/main/resources/*
 !src/test/java/
 src/test/java/*
 !src/test/java/java24/
+
+
 /gradle
 /.classpath
 /.project
