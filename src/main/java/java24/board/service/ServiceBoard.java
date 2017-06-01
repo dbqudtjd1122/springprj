@@ -102,10 +102,10 @@ public class ServiceBoard implements IBoard{
     }
 
     @Override
-    public ModelArticle getArticle(int articleNo) {
+    public ModelArticle getArticle(ModelArticle article) {
         ModelArticle result = null;
         try {
-            result=board.getArticle(articleNo);
+            result=board.getArticle(article);
         } catch (Exception e) {
             log.error("getArticle" + e.getMessage() );
         }
@@ -229,5 +229,11 @@ public class ServiceBoard implements IBoard{
     @Override
     public int deleteComment(ModelComments comm) throws Exception {
         return 0;
+    }
+
+    @Override
+    public ModelArticle getArticle(int articleNo) {
+        // TODO Auto-generated method stub
+        return null;
     }
 }

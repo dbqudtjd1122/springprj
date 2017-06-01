@@ -48,6 +48,7 @@ public interface IBoard {
      int insertComment (ModelComments comm) throws Exception;
      int updateComment(ModelComments updateValue, ModelComments searchValue) throws Exception;
      int deleteComment (ModelComments comm) throws Exception;
+    ModelArticle getArticle(ModelArticle article);
      
      
 }

@@ -112,7 +112,11 @@ public class ServiceBoardTest {
 
     @Test
     public void getArticle() throws Exception {
-        
+        ModelArticle article=new ModelArticle();
+        article.setArticle(1);
+        ModelArticle result=service.getArticle(article);
+
+        assertSame(result, 1);
     }
 
     @Test

@@ -209,4 +209,10 @@ public class DaoBoard implements IBoard {
     public int deleteComment(ModelComments comm) throws Exception {
         return 0;
     }
+
+    @Override
+    public ModelArticle getArticle(ModelArticle article) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
