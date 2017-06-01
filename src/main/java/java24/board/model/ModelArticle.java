@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class ModelArticle {
     
-      private Integer articlen  = null;  // `articleno` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+      private Integer article  = null;  // `articleno` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
       private String  boardcd   =   "";  // `boardcd` VARCHAR(20) NULL DEFAULT NULL,
       private String  title     =   "";  // `title` VARCHAR(200) NOT NULL,
       private String  content   =   "";  // `content` MEDIUMTEXT NULL,
@@ -24,17 +24,17 @@ public class ModelArticle {
     
     @Override
     public String toString() {
-        return "ModelArticle [articlen=" + articlen + ", boardcd=" + boardcd
+        return "ModelArticle [articlen=" + article + ", boardcd=" + boardcd
                 + ", title=" + title + ", content=" + content + ", email="
                 + email + ", hit=" + hit + ", regdate=" + regdate + ", UseYN="
                 + UseYN + ", InsertUID=" + InsertUID + ", InsertDT=" + InsertDT
                 + ", UpdateUID=" + UpdateUID + ", UpdateDT=" + UpdateDT + "]";
     }
-    public Integer getArticlen() {
-        return articlen;
+    public Integer getArticle() {
+        return article;
     }
-    public void setArticlen(Integer articlen) {
-        this.articlen = articlen;
+    public void setArticle(Integer article) {
+        this.article = article;
     }
     public String getBoardcd() {
         return boardcd;

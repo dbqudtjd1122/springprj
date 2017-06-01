@@ -27,13 +27,13 @@ public interface IBoard {
     
     // Article
      int getArticleTotalRecord ( ModelArticle searchWord );
-     int getArticleList( ModelArticle searchWord );
+     ModelArticle getArticleList( ModelArticle searchWord );
      ModelArticle getArticle ( int articleNo );
      int insertArticle ( ModelArticle article );
      int updateArticle ( ModelArticle updateValue, ModelArticle searchValue);
      int deleteArticle ( ModelArticle article );
      int increaseHit ( int articleNo );
-     List <ModelArticle> getNextArticle ( ModelArticle article, String search);
+     List <ModelArticle> getNextArticle ( ModelArticle article, ModelArticle search);
      List <ModelArticle> getPrevArticle ( ModelArticle searchWord);
      
     // AttachFile
